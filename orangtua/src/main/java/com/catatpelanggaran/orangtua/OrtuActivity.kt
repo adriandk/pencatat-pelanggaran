@@ -58,9 +58,6 @@ class OrtuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun getData(nis: String) {
         val database = FirebaseDatabase.getInstance().reference
         database.child("Orang_Tua").addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@OrtuActivity, "Error", Toast.LENGTH_SHORT).show()
-            }
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.child(nis).exists()) {
@@ -74,6 +71,10 @@ class OrtuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     SharedPreferences.clearData(this@OrtuActivity)
                     finish()
                 }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@OrtuActivity, "Error", Toast.LENGTH_SHORT).show()
             }
 
         })
@@ -108,4 +109,10 @@ class OrtuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+    override fun onResume() {
+        super.onResume()
+        getData(nis)
+    }
+
 }
