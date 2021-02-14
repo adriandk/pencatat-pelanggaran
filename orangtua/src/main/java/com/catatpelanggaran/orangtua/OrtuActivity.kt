@@ -110,9 +110,9 @@ class OrtuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    override fun onResume() {
-        super.onResume()
-        getData(nis)
-    }
+//    override fun onResume() {
+//        super.onResume()
+//        getData(nis)
+//    }
 
 }
