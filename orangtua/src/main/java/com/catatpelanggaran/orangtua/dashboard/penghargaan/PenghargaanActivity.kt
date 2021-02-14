@@ -39,7 +39,7 @@ class PenghargaanActivity : AppCompatActivity() {
         back_button.setOnClickListener { onBackPressed() }
 
         nis = intent.getStringExtra(NIS_SISWA).toString()
-        data = intent.getStringExtra(PelanggaranActivity.DATA_ACTIVITY).toString()
+        data = intent.getStringExtra(DATA_ACTIVITY).toString()
 
         if (data == "siswa") {
             getDataSiswa(nis)
