@@ -60,8 +60,7 @@ class GurubkActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
     private fun getData(nip: String) {
         val database = FirebaseDatabase.getInstance().reference
-
-        database.child("Guru").addListenerForSingleValueEvent(object : ValueEventListener {
+        database.child("Guru").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.child(nip).exists()) {
                     val nama = snapshot.child(nip).child("nama").value.toString()
@@ -75,6 +74,10 @@ class GurubkActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                     finish()
                 }
             }
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@GurubkActivity, "Error", Toast.LENGTH_SHORT).show()
+            }
+
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(this@GurubkActivity, "Error", Toast.LENGTH_SHORT).show()
             }
@@ -114,5 +117,10 @@ class GurubkActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         drawer_layout.closeDrawer(GravityCompat.START)
 
         return true
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getData(nip)
     }
 }

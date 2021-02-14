@@ -5,7 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Ortu(
-    val nis: String? = null,
+    val id: String? = null,
     val nama: String? = null,
     val nohp: String? = null
 ) : Parcelable

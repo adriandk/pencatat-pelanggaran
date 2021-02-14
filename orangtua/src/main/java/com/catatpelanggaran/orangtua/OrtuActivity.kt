@@ -62,8 +62,8 @@ class OrtuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun getData(nis: String) {
         val database = FirebaseDatabase.getInstance().reference
+        database.child("Orang_Tua").addValueEventListener(object : ValueEventListener {
 
-        database.child("Orang_Tua").addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.child(nis).exists()) {
                     val nama = snapshot.child(nis).child("nama").value.toString()
@@ -114,4 +114,10 @@ class OrtuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+//    override fun onResume() {
+//        super.onResume()
+//        getData(nis)
+//    }
+
 }
