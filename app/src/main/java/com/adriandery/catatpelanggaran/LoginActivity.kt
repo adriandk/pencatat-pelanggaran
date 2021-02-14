@@ -102,12 +102,6 @@ class LoginActivity : AppCompatActivity() {
 
             }
         }
-
-        button_daftar.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-
-        }
     }
 
     override fun onStart() {
@@ -124,7 +118,7 @@ class LoginActivity : AppCompatActivity() {
             } else if (SharedPreferences.getDataAs(this).equals("gurubk")) {
                 goToModule("gurubk", nip)
                 finish()
-            } else if (SharedPreferences.getDataAs(this).equals("orangtua")) {
+            } else {
                 goToModule("orangtua", nip)
                 finish()
             }
@@ -144,8 +138,9 @@ class LoginActivity : AppCompatActivity() {
                     Intent(this, Class.forName("com.catatpelanggaran.gurubk.GurubkActivity"))
                 intent.putExtra("NIP", nip)
                 startActivity(intent)
-            } else if (moduleName == "orangtua") {
-                val intent = Intent(this, Class.forName("com.catatpelanggaran.orangtua.OrtuActivity"))
+            } else {
+                val intent =
+                    Intent(this, Class.forName("com.catatpelanggaran.orangtua.OrtuActivity"))
                 intent.putExtra("NIS", nip)
                 startActivity(intent)
             }
