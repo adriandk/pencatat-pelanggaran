@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Catat_Pelanggaran.iml" filepath="$PROJECT_DIR$/.idea/modules/Catat_Pelanggaran.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin/Catat_Pelanggaran.admin.iml" filepath="$PROJECT_DIR$/.idea/modules/admin/Catat_Pelanggaran.admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Catat_Pelanggaran.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Catat_Pelanggaran.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gurubk/Catat_Pelanggaran.gurubk.iml" filepath="$PROJECT_DIR$/.idea/modules/gurubk/Catat_Pelanggaran.gurubk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/orangtua/Catat_Pelanggaran.orangtua.iml" filepath="$PROJECT_DIR$/.idea/modules/orangtua/Catat_Pelanggaran.orangtua.iml" />
+    </modules>
+  </component>
+</project>
