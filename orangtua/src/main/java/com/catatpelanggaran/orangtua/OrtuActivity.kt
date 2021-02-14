@@ -58,7 +58,6 @@ class OrtuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun getData(nis: String) {
         val database = FirebaseDatabase.getInstance().reference
         database.child("Orang_Tua").addValueEventListener(object : ValueEventListener {
-
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.child(nis).exists()) {
                     val nama = snapshot.child(nis).child("nama").value.toString()
